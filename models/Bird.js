@@ -1,20 +1,22 @@
-import mongoose from "../db/connection.js";
+import mongoose from "mongoose";
 const Schema = mongoose.Schema
 
 // import the data and write to file as array of objs
 // this way we can reassign the names of the properties in the Schema
 
 let birdSchema = Schema({
-  "speciesCode": String,
-  "comName": String,
-  "sciName": String,
-  "locName": String,
-  "obsDt": Date,
-  "howMany": Number, // Can organize this data based on observation size
-  "lat": Number,
-  "lng": Number,
-  "obsValid": Boolean,
-  "locationPrivate": Boolean,
+  "commonName": String,
+  "speciesCode": {
+    type: String,
+    require: true,
+  },
+  "scientificName": String,
+  "howMany": Number,
+  "location": String,
+  "latitude": Number,
+  "longitude": Number,
+  "privateLocation": Boolean,
+  "obsDate": Date,
   "subId": String,
 })
 let model = mongoose.model

@@ -1,25 +1,29 @@
-import data from "./countries.json" assert {type: "json"};
+import data from "../geese-NY.json" assert {type: "json"};
 import mongoose from "mongoose";
-import connection from "./connection.js";
-import Country from "./Country.js";
+import connection from "../db/connection.js";
+import Bird from "../models/Bird.js";
 
-let countryData = data.map((item) => {
-  const country = {};
-  country.name = item.name.official;
-
-  // Some of the capitals are undefined so we have to take care of that
-
-  //ternary : firt thing true? yes : no
-  item.capital ? (country.capital = item.capital[0]) : (country.capital = "");
-  country.region = item.region;
-  country.population = item.population;
-  return country;
+let gooseData = data.map((item) => {
+  const goose = {};
+  goose.commonName = item.comName;
+  goose.speciesCode = item.speciesCode;
+  goose.scientificName = item.sciName;
+  goose.howMany = item.howMany;
+  goose.location = item.locName
+  goose.latitude = item.lat
+  goose.longitude = item.lng
+  goose.privateLocation = item.locationPrivate
+  goose.obsDate = item.obsDt
+  goose.subId = item.subId
+  return goose;
 });
 
 // now use all the mongoose funcs to seed the db
-Country.deleteMany({})
-  .then(() => Country.create(countryData))
-  .then(Country.find({}, console.log))
+
+//leave Bird. because we want to reuse bird schema it wont change but then pass in the specific data i.e. goose or owl
+Bird.deleteMany({})
+  .then(() => Bird.create(gooseData))
+  .then(Bird.find({}, console.log))
   .then(() => connection.close())
   .then(() => console.log("Done!"))
   .catch((error) => console.log("Error", error));

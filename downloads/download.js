@@ -13,28 +13,31 @@ const config = {
   }
 };
 
-axios(config)
-.then(function (response) {
-  const newData = response.data
-  console.log(newData)
-  newData.forEach(data => fsPromises.appendFile("./data.json", JSON.stringify(data) + "," + "\n"), {once: true})
-})
-.catch(function (error) {
-  console.log(error);
-});
-
-// const config2 = {
-//   method: 'get',
-//   url: `https://api.ebird.org/v2/ref/taxonomy/ebird`,
-//   headers: { 
-//     'X-eBirdApiToken': `${birdApiToken}`
-//   }
-// };
-
-// axios(config2)
+// axios(config)
 // .then(function (response) {
-//   console.log(response.data);
+//   const newData = response.data
+//   console.log(newData)
+//   newData.forEach(data => fsPromises.appendFile("./data.json", JSON.stringify(data) + "," + "\n"), {once: true})
 // })
 // .catch(function (error) {
 //   console.log(error);
+// });
+
+// run this to see species codes to populate new json data with diff bird species
+const config2 = {
+  method: 'get',
+  url: `https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json`,
+  headers: { 
+    'X-eBirdApiToken': `${birdApiToken}`
+  }
+};
+
+// axios(config2)
+// .then(function (response) {
+//   const newData = response.data
+//   console.log(newData)
+//   newData.forEach(data => fsPromises.appendFile("./downloads/taxonomy.json", JSON.stringify(data) + "," + "\n"), {once: true})
+// })
+// .catch(function (error) {
+//     console.log(error);
 // });
