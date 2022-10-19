@@ -35,3 +35,8 @@ Bird.deleteMany({})
 // 3. Create a seed file in which you use the schema structure, import the data you wrote in step one
 // 4. Map that data out into a new variable
 // 5. put that into a new database
+// next establish routers and server connections
+
+// write the a file that has region codes
+// get remainder of NYS geese data to populate the whole state in the geese-NY.json
+// write readme and especially credit cornell
