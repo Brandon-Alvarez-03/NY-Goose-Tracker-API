@@ -30,3 +30,14 @@ the end result is ______ which can be used for _______
 6. create a seed file
 7. create an index file to manipulate
 8. create a router file to create routers
+
+
+### next steps
+
+---
+
+1. controllers
+2. pass controllers to routes in routes
+3. pass routes to index in routes
+4. pass index to server
+5. spin up server and test routes
