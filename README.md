@@ -41,3 +41,8 @@ the end result is ______ which can be used for _______
 3. pass routes to index in routes
 4. pass index to server
 5. spin up server and test routes
+
+
+- http://localhost:3000//api/geese/region/US-NY-001
+- http://localhost:3000//api/geese/geese
+- http://localhost:3000//api/

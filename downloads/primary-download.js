@@ -3,7 +3,7 @@ import { default as axios } from 'axios';
 import { promises as fsPromises } from 'fs'
 const birdApiToken = 'rcbsbnma0vns'
 const speciesCode = `cangoo`
-let regionCode = 'US-NY-005'
+let regionCode = 'US-NY-123'
 
 let geeseConfig = {
   method: 'get',
@@ -17,7 +17,7 @@ axios(geeseConfig)
   .then(function (response) {
   const newData = response.data
   console.log(newData)
-  newData.forEach(data => fsPromises.appendFile("./geese-bronx-NY.json", JSON.stringify(data) + "," + "\n"), {once: true})
+  newData.forEach(data => fsPromises.appendFile("./corrected-geese-NY.json", JSON.stringify(data) + "," + "\n"), {once: true})
 })
 .catch(function (error) {
   console.log(error);

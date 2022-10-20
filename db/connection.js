@@ -8,7 +8,7 @@ let mongooseConfig = {
 
 mongoose.set("returnOriginal", false);
 
-mongoose.connect('mongodb://127.0.0.1:27017/goose_tracker_ny', mongooseConfig)
+mongoose.connect('mongodb://127.0.0.1:27017/ny_goose-tracker', mongooseConfig)
 
 mongoose.connection.on('connected', () => console.log('Connected to MongoDB'));
 mongoose.connection.on('error', () => console.log(chalk.red('MongoDB connection error')));
