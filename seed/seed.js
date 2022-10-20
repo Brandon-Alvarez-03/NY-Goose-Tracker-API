@@ -1,25 +1,31 @@
-import data from "../geese-bronx-NY.json" assert {type: "json"};
+import data from "../geese-NY-complete.json" assert {type: "json"};
 // import mongoose from "mongoose";
 import connection from "../db/connection.js";
-import Bird from "../models/Bird.js";
+import Bird from "../models/Bird.js"; 
+// console.log(data)
+let gooseData = []
 
-let gooseData = data.map((item) => {
+data.forEach((counties) => {
+  counties.map((item) =>  {
   const goose = {};
+  goose.regionCode = item.regionCode;
   goose.commonName = item.comName;
   goose.speciesCode = item.speciesCode;
   goose.scientificName = item.sciName;
   goose.howMany = item.howMany;
   goose.state = "New York"
-  goose.county = "Bronx"
   goose.location = item.locName
   goose.latitude = item.lat
   goose.longitude = item.lng
   goose.privateLocation = item.locationPrivate
   goose.obsDate = item.obsDt
   goose.subId = item.subId
-  return goose;
-});
-
+    
+  // console.log(goose)
+  gooseData.push(goose);
+  })
+})
+console.log(gooseData)
 // now use all the mongoose funcs to seed the db
 
 //leave Bird. because we want to reuse bird schema it wont change but then pass in the specific data i.e. goose or owl

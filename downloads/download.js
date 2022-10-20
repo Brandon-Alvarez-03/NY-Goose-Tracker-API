@@ -13,7 +13,7 @@ let gooseArray = []
   // console.log(`${regionCode + regionCodeCounter.toString()}`)
   let newRegionCode = `${regionCode + regionCodeCounter.toString()}`
 
-  console.log(newRegionCode)
+  // console.log(newRegionCode)
 
   let geeseConfig = {
     method: 'get',
@@ -25,12 +25,16 @@ let gooseArray = []
   async function fetchGeese(index, config) {
     const response = await axios(config)
     const newData = response.data
-    console.log(index)
-    console.log(newRegionCode)
+    newData.forEach((x) => {
+      x.regionCode = newRegionCode
+      // console.log(x)
+    })
+    // console.log(index)
+    // console.log(newRegionCode)
     // console.log(newData)
     // console.log(newRegionCode)
     // newData.forEach(data => fsPromises.appendFile("./geese-NYS-complete.json", JSON.stringify(data) + "," + "\n"))
-    gooseArray[index] = response.data
+    gooseArray[index] = newData
   }
 
   async function changeRegion() {
@@ -50,7 +54,8 @@ let gooseArray = []
       i++
       regionCodeCounter += 2
     }
-    console.log(gooseArray)
+    // console.log(gooseArray)
+    await fsPromises.appendFile("./geese-NY-complete.json", JSON.stringify(gooseArray)  + "," + "\n")
   }
   changeRegion()
 
