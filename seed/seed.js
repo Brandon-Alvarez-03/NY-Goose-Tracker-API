@@ -1,5 +1,5 @@
-import data from "../geese-NY.json" assert {type: "json"};
-import mongoose from "mongoose";
+import data from "../geese-bronx-NY.json" assert {type: "json"};
+// import mongoose from "mongoose";
 import connection from "../db/connection.js";
 import Bird from "../models/Bird.js";
 
@@ -9,6 +9,8 @@ let gooseData = data.map((item) => {
   goose.speciesCode = item.speciesCode;
   goose.scientificName = item.sciName;
   goose.howMany = item.howMany;
+  goose.state = "New York"
+  goose.county = "Bronx"
   goose.location = item.locName
   goose.latitude = item.lat
   goose.longitude = item.lng

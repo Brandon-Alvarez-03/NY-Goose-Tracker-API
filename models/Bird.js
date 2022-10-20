@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 // this way we can reassign the names of the properties in the Schema
 
 let birdSchema = Schema({
+
   "commonName": String,
   "speciesCode": {
     type: String,
@@ -12,6 +13,8 @@ let birdSchema = Schema({
   },
   "scientificName": String,
   "howMany": Number,
+  "state": String,
+  "county": String,
   "location": String,
   "latitude": Number,
   "longitude": Number,
