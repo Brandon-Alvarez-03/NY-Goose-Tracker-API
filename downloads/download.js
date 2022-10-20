@@ -8,6 +8,7 @@ const speciesCode = `cangoo`
 let regionCodeCounter = 1
 let regionCode = `US-NY-00`
 let gooseArray = []
+let countyData;
 
 
   // console.log(`${regionCode + regionCodeCounter.toString()}`)
@@ -22,17 +23,30 @@ let gooseArray = []
       'X-eBirdApiToken': `${birdApiToken}`
     }
   };
+
+  const usNyConfig = {
+    method: 'get',
+    url: `https://api.ebird.org/v2/ref/region/info/${newRegionCode}?fmt=json`,
+    headers: {
+      'X-eBirdApiToken': `${birdApiToken}`
+    }
+  };
+async function fetchCounty(config) { 
+  let countRes = await axios(config)
+  let countyData = countRes.data.result
+}
+
+
   async function fetchGeese(index, config) {
     const response = await axios(config)
     const newData = response.data
+
+
     newData.forEach((x) => {
       x.regionCode = newRegionCode
-      // console.log(x)
+      x.countyLocation = countyData
     })
-    // console.log(index)
-    // console.log(newRegionCode)
-    // console.log(newData)
-    // console.log(newRegionCode)
+    console.log(newData)
     // newData.forEach(data => fsPromises.appendFile("./geese-NYS-complete.json", JSON.stringify(data) + "," + "\n"))
     gooseArray[index] = newData
   }
@@ -51,75 +65,12 @@ let gooseArray = []
         newRegionCode = `${regionCode + regionCodeCounter.toString()}`
       }
       await fetchGeese(i, geeseConfig)
+      await fetchCounty(usNyConfig)
       i++
       regionCodeCounter += 2
     }
     // console.log(gooseArray)
-    await fsPromises.appendFile("./geese-NY-complete.json", JSON.stringify(gooseArray)  + "," + "\n")
+    // await fsPromises.appendFile("./geese-NY-complete.json", JSON.stringify(gooseArray)  + "," + "\n")
   }
   changeRegion()
 
-
-    // let usNyConfig = {
-    //   method: 'get',
-    //   url: `https://api.ebird.org/v2/ref/region/info/${newRegionCode}?fmt=json`,
-    //   headers: { 
-    //     'X-eBirdApiToken': `${birdApiToken}`
-    //   }
-    // };
-    // NY region --> US-NY this one just says 'new, York, united states'
-    // Counties in NY --> US-NY-001 through US-NY-123 only odd numbers these provide one individual object with result i.e. 'Yates, New York, United States'
-    // need to write these into a file
-    
-    // axios(usNyConfig)
-    // .then(function (response) {
-    //   const newerData = response.data
-    //   // console.log(newRegionCode)
-    //   // console.log(newerData)
-    //   // console.log(newRegionCode)
-    //   // newData.forEach(data => fsPromises.appendFile("./downloads/us-ny.json", JSON.stringify(data) + "," + "\n"), {once: true})
-    // })
-    // .catch(function (error) {
-    //     console.log(error);
-    // });
-
-
-// run this to see species codes to populate new json data with diff bird species
-// const taxonomyConfig = {
-//   method: 'get',
-//   url: `https://api.ebird.org/v2/ref/taxonomy/ebird?fmt=json`,
-//   headers: { 
-//     'X-eBirdApiToken': `${birdApiToken}`
-//   }
-// };
-
-// axios(taxonomyConfig)
-// .then(function (response) {
-//   const newData = response.data
-//   console.log(newData)
-//   newData.forEach(data => fsPromises.appendFile("./downloads/taxonomy.json", JSON.stringify(data) + "," + "\n"), {once: true})
-// })
-// .catch(function (error) {
-//     console.log(error);
-// });
-
-// const usNyConfig = {
-//   method: 'get',
-//   url: `https://api.ebird.org/v2/ref/region/info/US-NY-123?fmt=json`,
-//   headers: { 
-//     'X-eBirdApiToken': `${birdApiToken}`
-//   }
-// };
-// // NY region --> US-NY this one just says 'new, York, united states'
-// // Counties in NY --> US-NY-001 through US-NY-123 only odd numbers these provide one individual object with result i.e. 'Yates, New York, United States'
-// // need to write these into a file
-
-// axios(usNyConfig)
-// .then(function (response) {
-//   const newData = response.data
-//   console.log(newData)
-//   // newData.forEach(data => fsPromises.appendFile("./downloads/us-ny.json", JSON.stringify(data) + "," + "\n"), {once: true})
-// })
-// .catch(function (error) {
-//     console.log(error);
-// });

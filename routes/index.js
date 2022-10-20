@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   res.send("This is the api root path");
 });
 
-router.get("/houses", geeseRoutes);
+router.use("/geese", geeseRoutes);
 // router.get("/characters", charactersRoutes);
 
 export default router;

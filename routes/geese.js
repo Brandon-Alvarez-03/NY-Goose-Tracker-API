@@ -1,12 +1,12 @@
 import { Router } from "express";
-import * as controllers from "../controllers/characters.js";
+import * as controllers from "../controllers/geese.js";
 
 const router = Router();
 
-router.get("/", controllers.getCharacters)
-router.get("/:id", controllers.getCharacter)
-router.post("/", createCharacter)
-router.put("/:id", controllers.updateCharacter)
-router.delete("/:id", controllers.deleteCharacter)
+router.get("/geese", controllers.getGeese)
+router.get("/region/:regionCode", controllers.getRegion)
+router.post("/region/", controllers.createRegionData)
+router.put("/region/:regionCode", controllers.updateRegionData)
+router.delete("/region/:regionCode", controllers.deleteRegionData)
 
 export default router

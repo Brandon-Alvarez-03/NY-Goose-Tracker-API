@@ -14,7 +14,7 @@ app.use(cors())
 
 const PORT = 3000
 
-app.use(logger("dev"))
+// app.use(logger("dev"))
 
 app.use(express.json())
 
