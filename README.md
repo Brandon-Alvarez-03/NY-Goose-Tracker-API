@@ -194,3 +194,12 @@ I attribute <http://eBird.org> as the source of the data accessed via the API wh
 I would like to extend a special thank you to The Cornell Lab of Ornithology <https://www.birds.cornell.edu/home/> for making such data  available. Without this information I would not have been able to gain this experience in combining my software engineering education with my environmental engineering background.
 
 <https://www.birds.cornell.edu/home/ebird-api-terms-of-use/>
+
+## Skills and Tools Used
+
+---
+
+- MongoDB, Mongoose, Express.js
+- Routing, Postman, CRUD, controller logic
+- JSON, JavaScript, node.js
+- Data modeling and Schemas
