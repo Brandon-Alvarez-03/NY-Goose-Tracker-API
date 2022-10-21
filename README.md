@@ -122,8 +122,13 @@ Each individual object within that region will then have the following **unique*
 
 ---
 
-
-
 - <http://localhost:3000//api/geese/region/US-NY-001>
 - <http://localhost:3000//api/geese/>
 - <http://localhost:3000//api/>
+
+## Credits and Sources
+
+---
+
+I attribute <http://eBird.org> as the source of the data accessed via the API wherever it is used or displayed.
+I would like to extend a special thank you to The Cornell Lab of Ornithology <https://www.birds.cornell.edu/home/> for making such data  available. Without this information I would not have been able to gain this experience in combining my software engineering education with my environmental engineering background.
