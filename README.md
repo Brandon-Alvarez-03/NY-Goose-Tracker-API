@@ -73,7 +73,7 @@ Due to this API being created with the intent to present the data geospatially, 
 
 ---
 
-The landing page exists at the `"/"` or `/geese` path.
+The landing page exists at the `"/"` or `"/geese"` path.
 This route will present the entirety of goose data throughout New York State in a JSON format.
 
 Ex.
@@ -99,24 +99,30 @@ Ex.
 
 ```
 
-**Note:** Each instance of data exists in a single object, with the following properties instance comprising the general location and the date. This means that when searching for a specific location, there will be multiple sets of data for the location based on the date (i.e. one week can have 7 data objects for each day of the week at one location)
+<u> **Note:** </u> Each instance of data exists in a single object, with the following properties instance comprising the general location and the date. This means that when searching for a specific location, there will be multiple sets of data for the location based on the date (i.e. one week can have 7 data objects for each day of the week at one location)
 
-**Recall:** The entirety of API JSON data is comprised of a single array of arrays containing data objects. Each individual array represents a single region with the following breakdown structure.
+<u> **Recall:** </u> The entirety of API JSON data is comprised of a single array of arrays which contain data objects. Each individual array represents a single region with the following breakdown structure.
 
-- regionCode: "US-NY-119"
+- regionCode: i.e. "US-NY-119"
 - state: "New York"
-- county: "Westchester"
+- county: i.e. "Westchester"
 
 This means that every data object representing geese observations within an individual array will have the same regionCode, state, and county.
 
-Each individual object within that region will then have the following unique data:
+Each individual object within that region will then have the following **unique** data:
 
 - location (i.e. "Van Cortlandt Park - South" or "Croton Railroad Station") which are general locations within that region and county
-- Observation date and time
+- Observation date and time (i.e. "2022-10-18T15:50:00.000Z")
 - Goose Count (number of geese observed at that location on that specific date and time)
 - Private Location (true or false)
 - Specific latitude and longitude of the observation location
 - Unique SubId from the original data source (i.e. "subId": "S120896041")
+
+### Region
+
+---
+
+
 
 - <http://localhost:3000//api/geese/region/US-NY-001>
 - <http://localhost:3000//api/geese/>
