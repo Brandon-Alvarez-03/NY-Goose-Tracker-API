@@ -61,12 +61,63 @@ This domino effect is caused by many factors including runoff from hard surfaces
 
 My intention is to combine this API with GIS software to generate geospatial visuals.
 
-Additionally, a GIS tool can serve as a fun way to visualize where geese flock to so users can plan where NOT to have their next picnic!
+Additionally, a GIS tool can serve as a fun way to visualize where geese flock to so that users can plan where NOT to have their next picnic!
 
 ## How to Use the Goose Tracker API
 
 ---
 
+Due to this API being created with the intent to present the data geospatially, the CRUD structure set with a location-based approach in mind.
+
+### Current landing page
+
+---
+
+The landing page exists at the `"/"` or `/geese` path.
+This route will present the entirety of goose data throughout New York State in a JSON format.
+
+Ex.
+
+```javascript
+
+  {
+    "_id": "6351a1acb0f94df883e59015",
+    "speciesCode": "cangoo",
+    "commonName": "Canada Goose",
+    "scientificName": "Branta canadensis",
+    "regionCode": "US-NY-119",
+    "state": "New York",
+    "county": "Westchester",
+    "location": "Glen Island Park",
+    "latitude": 40.8857395,
+    "longitude": -73.783807,
+    "privateLocation": false,
+    "obsDate": "2022-10-18T15:50:00.000Z",
+    "subId": "S120896041",
+    "__v": 0
+  },
+
+```
+
+**Note:** Each instance of data exists in a single object, with the following properties instance comprising the general location and the date. This means that when searching for a specific location, there will be multiple sets of data for the location based on the date (i.e. one week can have 7 data objects for each day of the week at one location)
+
+**Recall:** The entirety of API JSON data is comprised of a single array of arrays containing data objects. Each individual array represents a single region with the following breakdown structure.
+
+- regionCode: "US-NY-119"
+- state: "New York"
+- county: "Westchester"
+
+This means that every data object representing geese observations within an individual array will have the same regionCode, state, and county.
+
+Each individual object within that region will then have the following unique data:
+
+- location (i.e. "Van Cortlandt Park - South" or "Croton Railroad Station") which are general locations within that region and county
+- Observation date and time
+- Goose Count (number of geese observed at that location on that specific date and time)
+- Private Location (true or false)
+- Specific latitude and longitude of the observation location
+- Unique SubId from the original data source (i.e. "subId": "S120896041")
+
 - <http://localhost:3000//api/geese/region/US-NY-001>
-- <http://localhost:3000//api/geese/geese>
+- <http://localhost:3000//api/geese/>
 - <http://localhost:3000//api/>
