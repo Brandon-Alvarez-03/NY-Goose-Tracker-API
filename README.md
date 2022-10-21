@@ -15,7 +15,7 @@ Data points include:
 - Scientific Taxa Name
   - I.g. "Branta canadensis"
 - Location ID (from Original Study)
-  - "L15337382
+  - "L15337382"
 - State
   - "New York"
 - County
@@ -31,7 +31,7 @@ Data points include:
 - Latitude and Longitude Coordinates
   - "lat": "41.179238"
   - "lng": "-73.894701"
-- Boolean Value indication whether the observation location is on private property
+- Boolean Value indicating whether the observation location is on private property
   - I.g. "privateLocation": "false"
 
 Data often needs to be created, read, updated, and deleted accordingly to meet varying needs. (referred to as CRUD)
@@ -44,7 +44,7 @@ This API features full CRUD functionality.
 
 ---
 
-As an former environmental engineer, I understand water quality is primary interest.
+As a former environmental engineer, I understand water quality is primary interest.
 Phosphorus and nitrogen are primary contributors to nitrification and eutrophication in both fresh water (phosphorus) and marine (nitrogen) water bodies.
 
 Large flocks of geese defecate en masse.
