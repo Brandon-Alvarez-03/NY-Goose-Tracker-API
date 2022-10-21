@@ -51,13 +51,13 @@ Large flocks of geese defecate en masse.
 Goose droppings can be seen as an effective fertilizer for gardens and golf courses,  because they contain significant amounts of nitrogen, phosphorus and carbon when dried.
 This fertilizer effect is similar in aquatic plants and algae, however, this is not as desirable.
 
-Geese often flock to large open areas near water bodies. When these areas experience storm events, storm water (in the thousands of gallons) runoff may transport much of these droppings into the surrounding water bodies.
+Geese often flock to large open areas near water bodies. When these areas experience storm events, storm water runoff (in the thousands of gallons) may transport much of these droppings into the surrounding water bodies.
 
 This causes a process known as nitrification/eutrophication. Aquatic vegetation and algae, domestic and invasive, experience booms of growth due to nitrification. It leads to a positive feedback loop where the plants absorb all the nutrients and block natural light from the water. Oxygen is then deprived from the water as plants and algae die off en masse and consume dissolved oxygen throughout the decomposition process. (eutrophication)
 
 This effect sacrifices available resources for other subsurface plants, benthic invertebrates, and fish species. They cannot survive in the anoxic environment.
 
-This domino effect is caused by many factors including runoff from hard surfaces and roadways and wastewater pollution, however, the purpose of this API is to present a tool that can be used to observe correlation between Canada Goose migration/presence and nutrification of adjacent water bodies.
+This domino effect is caused by many factors including runoff from hard surfaces, roadways, and wastewater pollution, however, the purpose of this API is to present a tool that can be used to observe correlation between Canada Goose migration/presence and nutrification of adjacent water bodies.
 
 My intention is to combine this API with GIS software to generate geospatial visuals.
 
@@ -67,9 +67,9 @@ Additionally, a GIS tool can serve as a fun way to visualize where geese flock t
 
 ---
 
-Due to this API being created with the intent to present the data geospatially, the CRUD structure set with a location-based approach in mind.
+Due to this API being created with the intent to present the data geospatially, the CRUD structure is set with a location-centric approach in mind.
 
-### Current landing page
+### Landing page
 
 ---
 
@@ -122,9 +122,69 @@ Each individual object within that region will then have the following **unique*
 
 ---
 
-- <http://localhost:3000//api/geese/region/US-NY-001>
-- <http://localhost:3000//api/geese/>
-- <http://localhost:3000//api/>
+Search by Region will feature use of the Region codes.
+Region codes for New York State are in the following format:
+
+- regionCode: US-NY-001 through US-NY-123
+  - **Note**: regionCodes are alphabetical from Albany to Yates and only include odd numbers.
+  
+  - Sample region get:
+  `//api/geese/region/US-NY-005`
+
+  - Sample Result:
+
+```javascript
+
+[
+  {
+    "_id": "6351a1acb0f94df883e5894e",
+    "speciesCode": "cangoo",
+    "commonName": "Canada Goose",
+    "scientificName": "Branta canadensis",
+    "howMany": 29,
+    "regionCode": "US-NY-005",
+    "state": "New York",
+    "county": "Bronx",
+    "location": "Van Cortlandt Park--Southwest Zone",
+    "latitude": 40.8941483,
+    "longitude": -73.8929476,
+    "privateLocation": false,
+    "obsDate": "2022-10-20T13:43:00.000Z",
+    "subId": "S120992068",
+    "__v": 0
+  },
+  {
+    "_id": "6351a1acb0f94df883e5894f",
+    "speciesCode": "cangoo",
+    "commonName": "Canada Goose",
+    "scientificName": "Branta canadensis",
+    "howMany": 50,
+    "regionCode": "US-NY-005",
+    "state": "New York",
+    "county": "Bronx",
+    "location": "Pelham Bay Park--The Meadow and adj. woodland",
+    "latitude": 40.8628317,
+    "longitude": -73.7972195,
+    "privateLocation": false,
+    "obsDate": "2022-10-19T15:20:00.000Z",
+    "subId": "S120959682",
+    "__v": 0
+  },
+
+```
+
+### Coming Updates
+
+---
+
+The next updates to this API will be:
+
+1. Search by County
+2. Search bird count ranges (i.e. 0-10, 20-50, 50-100, 100-200, 200+)
+3. Display list of counties and county codes
+4. Display list of common locations (and feature search by common location)
+5. Add Connecticut and New Jersey (Tri-state area)
+6. Implement automatic updates on recent data
 
 ## Credits and Sources
 
@@ -132,3 +192,5 @@ Each individual object within that region will then have the following **unique*
 
 I attribute <http://eBird.org> as the source of the data accessed via the API wherever it is used or displayed.
 I would like to extend a special thank you to The Cornell Lab of Ornithology <https://www.birds.cornell.edu/home/> for making such data  available. Without this information I would not have been able to gain this experience in combining my software engineering education with my environmental engineering background.
+
+<https://www.birds.cornell.edu/home/ebird-api-terms-of-use/>
