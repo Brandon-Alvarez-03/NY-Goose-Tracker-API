@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use("/api", routes); // order of .use routes doesn't matter so long as it comes before starting up the server
+app.use("/", routes); // order of .use routes doesn't matter so long as it comes before starting up the server
 
 db.on("connected", () => {
   console.clear();
