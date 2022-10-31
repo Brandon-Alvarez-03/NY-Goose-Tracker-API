@@ -53,7 +53,7 @@ This fertilizer effect is similar in aquatic plants and algae, however, this is 
 
 Geese often flock to large open areas near water bodies. When these areas experience storm events, storm water runoff (in the thousands of gallons) may transport much of these droppings into the surrounding water bodies.
 
-This causes a process known as nitrification/eutrophication. Aquatic vegetation and algae, domestic and invasive, experience booms of growth due to nitrification. It leads to a positive feedback loop where the plants absorb all the nutrients and block natural light from the water. Oxygen is then deprived from the water as plants and algae die off en masse and consume dissolved oxygen throughout the decomposition process. (eutrophication)
+This causes a process known as nitrification/eutrophication. Aquatic vegetion and algae, domestic and invasive, experience booms of growth due to nitrification. It leads to a positive feedback loop where the plants absorb all the nutrients and block natural light from the water. Oxygen is then deprived from the water as plants and algae die off en masse and consume dissolved oxygen throughout the decomposition process. (eutrophication)
 
 This effect sacrifices available resources for other subsurface plants, benthic invertebrates, and fish species. They cannot survive in the anoxic environment.
 
