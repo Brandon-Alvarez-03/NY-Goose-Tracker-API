@@ -48,7 +48,7 @@ As a former environmental engineer, I understand water quality is primary intere
 Phosphorus and nitrogen are primary contributors to nitrification and eutrophication in both fresh water (phosphorus) and marine (nitrogen) water bodies.
 
 Large flocks of geese defecate en masse.
-Goose droppings can be seen as an effective fertilizer for gardens and golf courses,  because they contain significant amounts of nitrogen, phosphorus and carbon when dried.
+Goose droppings can be seen as an effective fertilizer for gardens and golf courses, because they contain significant amounts of nitrogen, phosphorus and carbon when dried.
 This fertilizer effect is similar in aquatic plants and algae, however, this is not as desirable.
 
 Geese often flock to large open areas near water bodies. When these areas experience storm events, storm water runoff (in the thousands of gallons) may transport much of these droppings into the surrounding water bodies.
@@ -73,10 +73,13 @@ Due to this API being created with the intent to present the data geospatially, 
 
 ---
 
-The landing page exists at the `"/"` or `"/geese"` path.
+The landing page exists at the `"/api/"`
+Enter `"/geese"` after the path.
 This route will present the entirety of goose data throughout New York State in a JSON format.
-
 Ex.
+<https://ny-goose-tracker-api-production.up.railway.app/api/geese>
+
+Ex. of Returned format
 
 ```javascript
 
@@ -126,10 +129,11 @@ Search by Region will feature use of the Region codes.
 Region codes for New York State are in the following format:
 
 - regionCode: US-NY-001 through US-NY-123
+
   - **Note**: regionCodes are alphabetical from Albany to Yates and only include odd numbers.
-  
+
   - Sample region get:
-  `//api/geese/region/US-NY-005`
+    `/api/geese/region/US-NY-005` for Bronx county or `/api/geese/region/US-NY-119` for Westchester County
 
   - Sample Result:
 
@@ -191,7 +195,7 @@ The next updates to this API will be:
 ---
 
 I attribute <http://eBird.org> as the source of the data accessed via the API wherever it is used or displayed.
-I would like to extend a special thank you to The Cornell Lab of Ornithology <https://www.birds.cornell.edu/home/> for making such data  available. Without this information I would not have been able to gain this experience in combining my software engineering education with my environmental engineering background.
+I would like to extend a special thank you to The Cornell Lab of Ornithology <https://www.birds.cornell.edu/home/> for making such data available. Without this information I would not have been able to gain this experience in combining my software engineering education with my environmental engineering background.
 
 <https://www.birds.cornell.edu/home/ebird-api-terms-of-use/>
 
