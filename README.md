@@ -2,9 +2,15 @@
 
 ## Overview
 
----
+The landing page exists at the `"/api/"`
+Enter `"/geese"` after the path.
+This route will present the entirety of goose data throughout New York State in a JSON format.
+Ex.
+<https://ny-goose-tracker-api-production.up.railway.app/api/geese>
 
-This API provides recent (within one month) updates on the general and precise locations of flocks of geese by the day throughout New York State in a JSON format.
+## NOTE: Have a JSON viewer extension installed on your browser to display/"pretty" the large datasets in your browser
+
+This API provides recent updates on the general and precise locations of flocks of geese by the day throughout New York State in a JSON format.
 
 - (Extrapolated from the Cornell Ornithology eBird API and manipulated for more congruent location information)
 
@@ -79,6 +85,8 @@ This route will present the entirety of goose data throughout New York State in 
 Ex.
 <https://ny-goose-tracker-api-production.up.railway.app/api/geese>
 
+NOTE: Have a JSON viewer extension installed on your browser to display/"pretty" the large datasets in your browser.
+
 Ex. of Returned format
 
 ```javascript
@@ -137,7 +145,7 @@ Region codes for New York State are in the following format:
 
   - Sample Result:
 
-```javascript
+```JSON
 
 [
   {
