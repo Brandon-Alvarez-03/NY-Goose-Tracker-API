@@ -141,7 +141,7 @@ Region codes for New York State are in the following format:
   - **Note**: regionCodes are alphabetical from Albany to Yates and only include odd numbers.
 
   - Sample region get:
-    `/api/geese/region/US-NY-005` for Bronx county or `/api/geese/region/US-NY-119` for Westchester County
+    `/geese/region/US-NY-005` for Bronx county or `/geese/region/US-NY-119` for Westchester County
 
   - Sample Result:
 
