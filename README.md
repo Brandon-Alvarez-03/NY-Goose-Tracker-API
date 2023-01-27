@@ -6,7 +6,7 @@ The landing page exists at the `"/api/"`
 Enter `"/geese"` after the path.
 This route will present the entirety of goose data throughout New York State in a JSON format.
 Ex.
-<https://ny-goose-tracker-api-production.up.railway.app/api/geese>
+<https://ny-goose-tracker-api-production.up.railway.app/geese>
 
 ## NOTE: Have a JSON viewer extension installed on your browser to display/"pretty" the large datasets in your browser
 
